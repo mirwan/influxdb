@@ -62,7 +62,7 @@ fi
 
 if [ -n "${GRAPHITE_TEMPLATE}" ]; then
     echo "GRAPHITE_TEMPLATE: ${GRAPHITE_TEMPLATE}"
-    sed -i -r -e "/^\[\[graphite\]\]/, /^$/ { s/instance\.profile\.measurement\*/${GRAPHITE_TEMPLATE}/; }" ${CONFIG_FILE}
+    sed -i -r -e "/^\[\[graphite\]\]/, /^\[/ { s/instance\.profile\.measurement\*/${GRAPHITE_TEMPLATE}/; }" ${CONFIG_FILE}
 fi
 
 # Add Collectd support
